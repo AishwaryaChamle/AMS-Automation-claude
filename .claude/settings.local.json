@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn -q dependency:build-classpath -Dmdep.outputFile=/tmp/claude-1000/-home-admin-1-Documents-Aishwarya-AI-MCP-AMS-Automation-Module/18649369-21ac-44f9-8e48-1198e4b7dbf7/scratchpad/cp.txt)"
+    ]
+  }
+}

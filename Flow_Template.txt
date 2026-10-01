@@ -1,0 +1,319 @@
+# Flow Document Template
+
+Use this template to write a functional flow file for any project or module, in the same style as
+`Recruitment_Leads_Mgmt.md` and `Agent_Onboarding_flow.md`. One flow file covers one module.
+
+How to use it:
+
+* Copy **Part 1** into a new file named `<Module_Name>_flow.md`.
+* Replace every `<placeholder>` with your project's values.
+* Delete any optional sections you don't need.
+* **Part 2** is a fully filled example for reference.
+
+---
+
+# PART 1 — TEMPLATE
+
+# <Module Name> Flow
+
+## 0. Common Requirements
+
+### URL
+
+    <application URL>
+
+### Users
+
+| Role (Short Name)        | User ID     | Password     | Used For                       |
+| ------------------------ | ----------- | ------------ | ------------------------------ |
+| <Role 1> (<R1>)          | <user id>   | <password>   | <creates / submits / approves> |
+| <Role 2> (<R2>)          | <user id>   | <password>   | <...>                          |
+| <Role 3> (<R3>)          | <user id>   | <password>   | <...>                          |
+
+### Test Data Rules
+
+* Test data must be valid for **<country / region / locale>**.
+* These fields must be **unique** on every run: <field 1>, <field 2>, <field 3>.
+* Field-level rules:
+  * <Field>: <rule, e.g. age between 18 and 65>
+  * <Field>: <rule, e.g. file must be PDF/PNG/JPG and under 10 MB>
+  * <Field>: <rule, e.g. start date must be before end date>
+
+### Dependencies
+
+* <Other flow file that must run first, e.g. "Run <Flow X> first if no <record> exists">
+* <Reference file for calculations or data, e.g. Database.md>
+
+---
+
+## 1. <Feature / Sub-module Name> — <Role>
+
+### Preconditions
+
+* <What must already exist, e.g. an Ongoing campaign or a New Lead>
+
+### A. <Variant 1, e.g. "Using ID Type X">
+
+1. Open browser and navigate to `<URL>`.
+2. Login as **<Role> (<User ID>)**.
+3. Click **<Menu>**.
+4. Click **<Sub-menu>**.
+5. Click **<Action button, e.g. +>**.
+6. Enter/Select:
+   * <Field 1>
+   * <Field 2>: **<fixed value, if any>**
+7. Click **<Next / Proceed>**.
+8. Upload the required documents.
+9. Click **<Submit>**.
+10. Click **OK**.
+11. Logout.
+
+### B. <Variant 2>
+
+1. <Same format as A. Only list the steps that differ, or write "Steps 1–5 same as A">.
+
+### Conditional Fields
+
+Use this pattern for any field that depends on another field's value.
+
+| Field            | Value          | Then                                      |
+| ---------------- | -------------- | ----------------------------------------- |
+| <Field>          | <Yes / Value>  | <extra field appears / upload document>   |
+| <Field>          | <No>           | <nothing extra / skip>                    |
+
+### Row / Action Menu Options (optional)
+
+Click the **<3 dots / Edit icon>** on a record and pick the option the test case needs:
+
+1. **<Option 1, e.g. Edit>**: <steps>
+2. **<Option 2, e.g. Deactivate>**: <steps>
+3. **<Option 3, e.g. Bulk Upload>**: follow steps <x> to <y>.
+
+---
+
+## 2. Bulk Upload (optional)
+
+1. Login as **<Role> (<User ID>)**.
+2. Click **<Menu>** → **<Sub-menu>**.
+3. Click **Download Sample Template**, then **Save**.
+4. Open the downloaded file, delete the sample rows, and add test data for **<country>**.
+5. Save the file.
+6. Click the uploader ("<uploader label text>") and upload the updated file.
+7. Click **<Upload>**, then **OK**.
+
+---
+
+## 3. Approval Routing (optional)
+
+Routing depends on **<deciding field(s), e.g. Total, Age, Amount>**.
+
+| Condition                    | Goes To                          |
+| ---------------------------- | -------------------------------- |
+| <Condition 1>                | <Approver role> — **<User ID>**  |
+| <Condition 2>                | <Approver role> — **<User ID>**  |
+| <Edge case, e.g. = X and Y>  | <Approver role> — **<User ID>**  |
+
+### Routes
+
+* **<Route 1 name>:** `<Role A> → <Role B> → <Role C>`
+* **<Route 2 name>:** `<Role A> → <Role C>`
+
+---
+
+## 4. Approval Process (optional)
+
+1. Logout from **<Submitter role> (<User ID>)**.
+2. Login as the approver given by the routing table above.
+3. Open **<Approval Tray / Inbox>**.
+4. Select the record with **<identifier, e.g. Generated Code>**.
+5. Click **Next** until the **<final review screen>** opens.
+6. Enter remarks.
+7. Click **Approve** or **Reject**.
+8. Click **OK**.
+9. Logout.
+
+### If Rejected
+
+<What happens: returned to submitter / closed / etc.>
+
+### If Approved
+
+<Next approver in the route, or the final step.>
+
+---
+
+## 5. Final Step / Completion (optional)
+
+1. Login as **<Role> (<User ID>)**.
+2. Open **<Submitted / Completed tab>**.
+3. <Final actions, e.g. download agreement, upload signed copy, submit>.
+4. Verify **<expected end state, e.g. Status = Active>**.
+
+---
+
+## 6. Expected Results / Validations
+
+| Check                         | Expected                                 |
+| ----------------------------- | ---------------------------------------- |
+| <Success message>             | "<exact message text>"                   |
+| <Record status after submit>  | <status>                                 |
+| <Negative check>              | <error message / button disabled>        |
+
+---
+---
+
+# PART 2 — EXAMPLE (Leave Management System)
+
+# Leave Request Flow
+
+## 0. Common Requirements
+
+### URL
+
+    https://hrms.example.com
+
+### Users
+
+| Role (Short Name)          | User ID | Password  | Used For                    |
+| -------------------------- | ------- | --------- | --------------------------- |
+| Employee (EMP)             | 200101  | Test@123  | Applies for leave           |
+| Reporting Manager (RM)     | 200102  | Test@123  | First-level approval        |
+| HR Manager (HR)            | 200103  | Test@123  | Final approval              |
+
+### Test Data Rules
+
+* Test data must be valid for **India**.
+* These fields must be **unique** on every run: Leave Reason text, Contact Number.
+* Field-level rules:
+  * From Date: current date or a future date.
+  * To Date: same as or after From Date.
+  * Medical Certificate: PDF/PNG/JPG, under 5 MB.
+
+### Dependencies
+
+* The employee must have a leave balance. If it is 0, run **Leave Balance Upload** (section 2) first.
+
+---
+
+## 1. Apply Leave — EMP
+
+### Preconditions
+
+* EMP 200101 is active and has a leave balance greater than 0.
+
+### A. Casual Leave
+
+1. Open browser and navigate to `https://hrms.example.com`.
+2. Login as **EMP (200101)**.
+3. Click **Leave Management**.
+4. Click **Apply Leave**.
+5. Click **+**.
+6. Select:
+   * Leave Type: **Casual Leave**
+   * From Date and To Date using the date picker
+7. Enter:
+   * Leave Reason
+   * Contact Number during leave
+8. Click **Submit**.
+9. Click **OK**.
+10. Logout.
+
+### B. Sick Leave
+
+1. Steps 1–5 same as A.
+2. Select Leave Type: **Sick Leave**.
+3. Select From Date and To Date.
+4. If leave is more than 2 days, upload the **Medical Certificate**.
+5. Enter Leave Reason and Contact Number.
+6. Click **Submit**, then **OK**.
+7. Logout.
+
+### Conditional Fields
+
+| Field          | Value              | Then                                  |
+| -------------- | ------------------ | ------------------------------------- |
+| Leave Type     | Sick Leave, > 2 days | Medical Certificate upload becomes mandatory |
+| Half Day       | Yes                | Select **First Half / Second Half**   |
+| Half Day       | No                 | Nothing extra                         |
+
+### Row / Action Menu Options
+
+Click the **3 dots** on a leave request and pick the option the test case needs:
+
+1. **Edit**: change To Date (only while status is Pending), click **Update**, then **OK**.
+2. **Cancel**: click **Cancel Request**, enter a reason, click **OK**.
+
+---
+
+## 2. Leave Balance Upload — HR
+
+1. Login as **HR (200103)**.
+2. Click **Leave Management** → **Leave Balance**.
+3. Click **Download Sample Template**, then **Save**.
+4. Open the downloaded file, delete the sample rows, and add balances for the test employees.
+5. Save the file.
+6. Click the uploader ("Please upload .xlsx or .csv files only") and upload the updated file.
+7. Click **Upload**, then **OK**.
+
+---
+
+## 3. Approval Routing
+
+Routing depends on the **number of leave days**.
+
+| Condition              | Goes To                      |
+| ---------------------- | ---------------------------- |
+| Days ≤ 3               | RM — **200102**              |
+| Days > 3               | RM — **200102**, then HR     |
+| Leave Type = Sick, > 5 | HR — **200103** directly     |
+
+### Routes
+
+* **Short leave:** `EMP → RM`
+* **Long leave:** `EMP → RM → HR`
+* **Long sick leave:** `EMP → HR`
+
+---
+
+## 4. Approval Process
+
+1. Logout from **EMP (200101)**.
+2. Login as the approver given by the routing table above.
+3. Open **Approval Tray**.
+4. Select the request with the **Leave Request ID**.
+5. Review the details.
+6. Enter remarks.
+7. Click **Approve** or **Reject**.
+8. Click **OK**.
+9. Logout.
+
+### If Rejected
+
+The request returns to EMP with status **Rejected**, and the leave balance is not deducted.
+
+### If Approved
+
+* RM approves a short leave → status becomes **Approved**.
+* RM approves a long leave → the request moves to **HR**.
+* HR approves → status becomes **Approved**.
+
+---
+
+## 5. Final Step / Completion
+
+1. Login as **EMP (200101)**.
+2. Open **My Leaves**.
+3. Verify the request status is **Approved**.
+4. Verify the leave balance went down by the number of days applied.
+
+---
+
+## 6. Expected Results / Validations
+
+| Check                         | Expected                                         |
+| ----------------------------- | ------------------------------------------------ |
+| Submit success message        | "Leave request submitted successfully"           |
+| Status after submit           | Pending                                          |
+| To Date before From Date      | Error: "To Date cannot be before From Date"      |
+| Sick leave > 2 days, no file  | Submit blocked: "Medical Certificate is required" |
+| Balance after approval        | Old balance − leave days                         |

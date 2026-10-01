@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+
+<title>Test Execution Status</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 16px; background: #fafafa; color: #222; }
+  h1 { font-size: 20px; margin: 0 0 4px; color: #790011; }
+  .state { color: #555; margin-bottom: 12px; }
+  .tiles { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tile { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 8px 14px; min-width: 100px; }
+  .tile b { display: block; font-size: 20px; }
+  .scroll { overflow: auto; max-height: calc(100vh - 150px); border: 1px solid #ccc; }
+  table { border-collapse: collapse; min-width: 100%; background: #fff; }
+  th, td { border: 1px solid #ccc; padding: 5px 7px; text-align: left; vertical-align: top; font-size: 12px; }
+  th { background: #1F4E78; color: #fff; position: sticky; top: 0; z-index: 1; min-width: 70px; }
+  td { min-width: 70px; }
+  td:nth-child(4), td:nth-child(6), td:nth-child(7), td:nth-child(8), td:nth-child(23) { min-width: 220px; }
+  td:nth-child(1), td:nth-child(9), td:nth-child(15), td:nth-child(22) { white-space: nowrap; }
+  tr.latest td { background: #fff7d6; }
+  .badge { padding: 2px 8px; border-radius: 10px; font-weight: bold; white-space: nowrap; }
+  .pass { background: #C6EFCE; color: #006100; }
+  .fail { background: #FFC7CE; color: #9C0006; }
+  .blocked { background: #FFEB9C; color: #7F6000; }
+  .invalid { background: #E4DFEC; color: #5B3F86; }
+  .pending { background: #eee; color: #666; }
+</style></head><body>
+<h1>Test Execution Status</h1>
+<div class="state">Execution completed at 17:23:22<br>Result file: /home/admin-1/Documents/Aishwarya/AI_MCP/Completed/1 Oct 26/AMS Automation Module with new template/Execution_Reports/testcases_result.xlsx</div>
+<div class="tiles">
+  <div class="tile">Executed<b>6 of 6</b></div>
+  <div class="tile">Pass<b>4</b></div>
+  <div class="tile">Fail<b>0</b></div>
+  <div class="tile">Blocked<b>0</b></div>
+  <div class="tile">Invalid<b>2</b></div>
+</div>
+<div class="scroll"><table><thead><tr><th>Test Case ID</th><th>Module / Feature</th><th>Requirement ID / User Story</th><th>Test Case Description</th><th>Test Type</th><th>Test Steps</th><th>Expected Result</th><th>Actual Result</th><th>Status</th><th>Business Criticality (Business importance)</th><th>Impact (Business/customer impact)</th><th>Likelihood (Probability of failure)</th><th>Risk Score (Impact * Likelihood)</th><th>Risk Level (Risk if functionality fails)</th><th>Priority (Execution priority)</th><th>Scope Category</th><th>Automation Candidate</th><th>Regression Candidate</th><th>Environment</th><th>Defect ID</th><th>Executed By</th><th>Execution Date</th><th>Remarks</th></tr></thead>
+<tbody>
+<tr id='RLC_CS_008'><td>RLC_CS_008</td><td>Campaign Summary</td><td>TS: Campaign Summary</td><td>Verify campaign chronological ordering.</td><td>UI</td><td>1. Precondition: at least three campaigns with different creation dates exist.<br>2. Navigate to https://192.168.2.80:8443 and log in as AA (102186).<br>3. Click Recruitment Leads Mgmt &gt; Campaign Management.<br>4. Note the order of campaigns in the list.<br>5. Verify campaigns are displayed in the required chronological (date) order.</td><td>Campaigns are displayed in the required chronological order.</td><td>Campaigns are displayed in the required chronological order.</td><td><span class='badge pass'>Pass</span></td><td>Low</td><td>Low</td><td>Unlikely</td><td>2</td><td>Low</td><td>P4</td><td>Optional</td><td>Yes</td><td>No</td><td>UAT</td><td></td><td>Aishwarya</td><td>01/Oct/2026</td><td></td></tr>
+<tr id='RLC_DM_006'><td>RLC_DM_006</td><td>Document Management</td><td>TS: Document Management</td><td>Verify document viewing without download.</td><td>Functional</td><td>1. Precondition: a document has been uploaded for a lead.<br>2. Navigate to https://192.168.2.80:8443 and log in as HOB/AH (102117).<br>3. Click Recruitment Leads Mgmt and select a campaign in Ongoing status assigned to branch WD01.<br>4. Open the lead and click the view (eye) icon of the document.<br>5. Check whether a download option is available.<br>6. Verify the document can be viewed and download is not offered (download is not supported).</td><td>Documents can be viewed; document download is not expected as supported functionality.</td><td>Documents can be viewed; document download is not expected as supported functionality.</td><td><span class='badge pass'>Pass</span></td><td>Low</td><td>Low</td><td>Unlikely</td><td>2</td><td>Low</td><td>P4</td><td>Optional</td><td>Yes</td><td>No</td><td>UAT</td><td></td><td>Aishwarya</td><td>01/Oct/2026</td><td></td></tr>
+<tr id='RLC_BL_003'><td>RLC_BL_003</td><td>Blacklisting</td><td>TS: Blacklisting Upload &amp; View</td><td>Verify blacklist upload instructions.</td><td>UI</td><td>1. Navigate to https://192.168.2.80:8443 and log in as Agency Admin (102186)<br>2. Click the Blacklisting card<br>3. Review the Upload Blacklisting section<br>4. Verify the applicable blacklist upload instructions are displayed</td><td>Applicable blacklist upload instructions are displayed.</td><td>Applicable blacklist upload instructions are displayed.</td><td><span class='badge pass'>Pass</span></td><td>Low</td><td>Low</td><td>Rare</td><td>1</td><td>Low</td><td>P4</td><td>Optional</td><td>Yes</td><td>No</td><td>UAT</td><td></td><td>Aishwarya</td><td>01/Oct/2026</td><td></td></tr>
+<tr id='RLC_GV_007'><td>RLC_GV_007</td><td>General Validation</td><td>TS: General Validations – UI Consistency</td><td>Verify Campaign Cost/Budget terminology.</td><td>UI</td><td>1. Navigate to https://192.168.2.80:8443 and log in as Agency Admin (102186)<br>2. Click Recruitment Leads Mgmt &gt; Campaign Management and click &#39;+&#39;<br>3. Note the Cost/Budget label on the create form<br>4. Check the same label on the edit form, campaign list and campaign summary<br>5. Verify Campaign Cost/Budget terminology is consistent across applicable screens</td><td>Campaign Cost/Budget terminology is consistent with the implemented requirement across applicable screens.</td><td>Campaign Cost/Budget terminology is consistent with the implemented requirement across applicable screens.</td><td><span class='badge pass'>Pass</span></td><td>Low</td><td>Low</td><td>Rare</td><td>1</td><td>Low</td><td>P4</td><td>Optional</td><td>No</td><td>No</td><td>UAT</td><td></td><td>Aishwarya</td><td>01/Oct/2026</td><td></td></tr>
+<tr id='RLC_GV_011'><td>RLC_GV_011</td><td>General Validation</td><td>TS: Document Management – Multi-language</td><td>Verify multi-language document scope.</td><td>Functional</td><td>1. Navigate to https://192.168.2.80:8443 and log in as Agency Admin (102186)<br>2. Open the document upload/view area<br>3. Upload/view a Sinhala or Tamil document<br>4. Verify multi-language document rendering/download is not treated as an expected functional requirement</td><td>Multi-language document rendering/download is not treated as an expected functional requirement.</td><td>Not executed: Marked &#39;Not in scope&#39; by ASPL in the test scenario document; there is no functional behaviour to automate.</td><td><span class='badge invalid'>Invalid</span></td><td>Low</td><td>Low</td><td>Rare</td><td>1</td><td>Low</td><td>P4</td><td>Out of Scope</td><td>No</td><td>No</td><td>UAT</td><td></td><td>Aishwarya</td><td>01/Oct/2026</td><td></td></tr>
+<tr id='RLC_GV_012' class='latest'><td>RLC_GV_012</td><td>General Validation</td><td>TS: User Wise – Marketing/AA</td><td>Verify annual NIC data cleansing scope.</td><td>Functional</td><td>1. Navigate to https://192.168.2.80:8443 and log in as Agency Admin (102186)<br>2. Review the available lead/NIC maintenance functions<br>3. Check whether any annual NIC data cleansing option or job is exposed<br>4. Verify annual NIC data cleansing is not treated as an in-scope test expectation</td><td>Annual data cleansing for existing NIC is not treated as an in-scope functional test expectation.</td><td>Not executed: Marked &#39;Not in scope&#39; by ASPL in the test scenario document; there is no functional behaviour to automate.</td><td><span class='badge invalid'>Invalid</span></td><td>Low</td><td>Low</td><td>Rare</td><td>1</td><td>Low</td><td>P4</td><td>Out of Scope</td><td>No</td><td>No</td><td>UAT</td><td></td><td>Aishwarya</td><td>01/Oct/2026</td><td></td></tr>
+</tbody></table></div>
+<script>
+  // Scroll to the test case executed most recently once the page has loaded
+  window.addEventListener('load', function () {
+    var latest = document.querySelector('tr.latest');
+    if (latest) { latest.scrollIntoView({block: 'center'}); }
+  });
+</script>
+</body></html>

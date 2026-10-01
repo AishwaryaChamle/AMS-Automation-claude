@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target xmlns:unless="ant:unless" name="main">
+    <property file="src/test/resources/config.properties" prefix="config" />
+    <input unless:set="testcases" addproperty="priorities" defaultvalue="${config.priorities}" message="&#10;Which priority should be executed? Enter P1, P2, P3, P4, several (e.g. P1,P2) or all (press Enter for the default)" />
+    <echo unless:set="testcases" level="info" message="Executing test cases with priority: ${priorities}" />
+  </target>
+</project>

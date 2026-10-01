@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ams</groupId>
+    <artifactId>ams-recruitment-automation</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <selenium.version>4.27.0</selenium.version>
+        <testng.version>7.10.2</testng.version>
+        <poi.version>5.2.5</poi.version>
+    </properties>
+
+    <dependencies>
+        <!-- Browser automation -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+        <!-- Test runner -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
+
+        <!-- Reads the test case workbooks, builds upload files and writes Executed_Suits.xls -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <!-- Reads the recruitment funnel counts from the AMS MySQL database (Database.md) -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.4.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- "mvn clean" also deletes the leftovers of earlier runs (besides target/): old reports,
+                 failure screenshots, temporary / lock files, JVM crash logs and TestNG's default output.
+                 Source code, test case workbooks, documents and results/ (kept for later runs) are never touched.
+                 failOnError=false: a file still open in Excel / WPS (locked on Windows) does not stop the run. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/../Execution_Reports</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}/screenshots</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}/test-output</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}</directory>
+                            <includes>
+                                <include>nohup.out</include>
+                                <include>hs_err_pid*.log</include>
+                                <include>replay_pid*.log</include>
+                                <include>*.tmp</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}/..</directory>
+                            <includes>
+                                <include>nohup.out</include>
+                                <include>hs_err_pid*.log</include>
+                                <include>.~*</include>
+                                <include>~$*</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <!-- Keep going after failures so every test case gets a result -->
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!-- "mvn clean test" asks which priority to execute (P1, P2, P3, P4 or all) before the tests start.
+             Not asked when the priority is given on the command line (mvn clean test -Dpriorities=P1)
+             or when test cases are chosen by ID (mvn clean test -Dtestcases=TC_ONB_001). -->
+        <profile>
+            <id>ask-priority</id>
+            <activation>
+                <property>
+                    <name>!priorities</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <id>ask-priority</id>
+                                <phase>process-test-classes</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <exportAntProperties>true</exportAntProperties>
+                                    <!-- No keyboard (e.g. CI, background run): the question cannot be answered, so instead of
+                                         stopping the build the "priorities" value in config.properties is used -->
+                                    <failOnError>false</failOnError>
+                                    <target xmlns:unless="ant:unless">
+                                        <!-- Default answer (Enter) = "priorities" in config.properties -->
+                                        <property file="src/test/resources/config.properties" prefix="config"/>
+                                        <input unless:set="testcases" addproperty="priorities" defaultvalue="${config.priorities}"
+                                               message="${line.separator}Which priority should be executed? Enter P1, P2, P3, P4, several (e.g. P1,P2) or all (press Enter for the default)"/>
+                                        <echo unless:set="testcases" level="info" message="Executing test cases with priority: ${priorities}"/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <priorities>${priorities}</priorities>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

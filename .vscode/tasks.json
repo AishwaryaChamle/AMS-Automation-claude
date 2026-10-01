@@ -1,0 +1,38 @@
+{
+    // Terminal > Run Task... runs the automation with Maven (the browser is visible unless "headless" is chosen)
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "AMS: Run all test cases",
+            "type": "shell",
+            "command": "mvn clean test",
+            "options": { "cwd": "${workspaceFolder}/automation" },
+            "group": { "kind": "test", "isDefault": true },
+            "problemMatcher": []
+        },
+        {
+            "label": "AMS: Run agent onboarding test cases",
+            "type": "shell",
+            "command": "mvn test -Dsurefire.suiteXmlFiles=testng-onboarding.xml",
+            "options": { "cwd": "${workspaceFolder}/automation" },
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "AMS: Re-run test cases in testng-rerun.xml",
+            "type": "shell",
+            "command": "mvn test -Dsurefire.suiteXmlFiles=testng-rerun.xml",
+            "options": { "cwd": "${workspaceFolder}/automation" },
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "AMS: Run all test cases (headless)",
+            "type": "shell",
+            "command": "mvn clean test -Dheadless=true",
+            "options": { "cwd": "${workspaceFolder}/automation" },
+            "group": "test",
+            "problemMatcher": []
+        }
+    ]
+}

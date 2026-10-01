@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Re-runs only the test cases that failed in the previous run (one browser at a time, like testng.xml) -->
+<suite name="AMS Recruitment Leads UAT - rerun" parallel="none" preserve-order="true">
+    <listeners>
+        <listener class-name="com.ams.report.ExecutionListener"/>
+        <!-- Runs only the test cases given with -Dtestcases=TC_001,TC_005 (all when not given) -->
+        <listener class-name="com.ams.report.TestCaseSelector"/>
+    </listeners>
+    <test name="Failed test cases">
+        <classes>
+            <class name="com.ams.tests.RLC_LM_007"/>
+            <class name="com.ams.tests.RLC_SLII_002"/>
+            <class name="com.ams.tests.RLC_BL_002"/>
+            <class name="com.ams.tests.RLC_BL_022"/>
+            <class name="com.ams.tests.RLC_GV_005"/>
+        </classes>
+    </test>
+</suite>

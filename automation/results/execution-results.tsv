@@ -1,0 +1,233 @@
+AA_CAM_001	Pass	Campaign is created successfully and becomes available in the campaign list.		01/10/2026
+AA_CAM_002	Pass	Newly created campaign is available to all authorized HOB and AS users.		01/10/2026
+AA_CAM_003	Pass	Campaign status changes from Active to Inactive successfully. The deactivated campaign is no longer available for new campaign-related transactions as per business rules.		01/10/2026
+AA_LEAD_004	Pass	Bulk lead file is uploaded successfully and valid leads are associated with the selected campaign.		01/10/2026
+AA_SLII_005	Pass	SLII exam data is uploaded successfully and becomes available for use during agent onboarding.		01/10/2026
+AA_SLII_006	Pass	System retrieves the applicable SLII exam information and uses it during agent onboarding.		01/10/2026
+AA_BL_007	Pass	Blacklisted agent records are uploaded successfully and become available for blacklist validation.		01/10/2026
+AA_AGENT_008	Pass	Agent is created successfully with a unique agent/sales code.		01/10/2026
+AA_AGENT_009	Pass	Selected branch is successfully assigned to the newly created agent.		01/10/2026
+AA_AGENT_010	Pass	Sales code is activated directly without additional approval, and the newly created agent can log in successfully.		01/10/2026
+TC_REC_APP_002	Pass	TRSM (Immediate Supervisor) should be able to approve the interview successfully		01/10/2026
+TC_REC_APP_003	Pass	HOB should be able to proceed the lead to onboarding and HOB, AS, LOP should be able to fill the onboarding form		01/10/2026
+TC_REC_APP_004	Pass	After HOB approval, the lead should appear in TRSM interview approval bucket		01/10/2026
+TC_REC_APP_005	Pass	After TRSM approval, the lead should appear in Agency Admin approval bucket		01/10/2026
+TC_REC_APP_006	Pass	Agency Admin should be able to approve the lead successfully		01/10/2026
+TC_REC_APP_007	Pass	HOB should be able to proceed the lead to onboarding and HOB, AS, and LOP should be able to fill the onboarding form		01/10/2026
+TC_REC_APP_008	Pass	Lead should be rejected immediately and no further approval stages should be triggered		01/10/2026
+TC_REC_APP_009	Pass	Lead should be rejected immediately and should not proceed to Agency Admin or onboarding		01/10/2026
+TC_REC_APP_010	Pass	Lead should be rejected immediately and should not proceed to onboarding		01/10/2026
+TC_REC_APP_011	Pass	Lead status should be displayed as "Rejected" and no further actions should be available		01/10/2026
+TC_REC_APP_012	Pass	System should allow proceeding to onboarding only after all mandatory approvals are completed		01/10/2026
+TC_REC_APP_013	Pass	AS should be able to access and submit onboarding details for the approved lead (Raise Request)		01/10/2026
+TC_REC_APP_014	Pass	LOP should be able to access and submit onboarding details for the approved lead (Raise Request) but First AS or HOB should proceed the lead.		01/10/2026
+TC_REC_APP_015	Pass	HOB should be able to access and submit onboarding details for the approved lead (Raise Request)		01/10/2026
+INT_NOTIF_001	Pass	Application moves to TRSM bucket and TRSM receives the approval notification.		01/10/2026
+INT_NOTIF_002	Pass	Application moves to AA bucket and AA receives the approval notification.		01/10/2026
+INT_NOTIF_003	Pass	Application is marked Rejected at TRSM level and HOB receives a notification identifying TRSM as the rejection level.		01/10/2026
+INT_NOTIF_004	Pass	HOB gets the notification when TRSM rejects the Lead.		01/10/2026
+INT_NOTIF_005	Pass	Application is marked Rejected at AA level and HOB receives a notification identifying AA as the rejection level.		01/10/2026
+INT_NOTIF_006	Pass	Notification clearly identifies whether rejection occurred at TRSM or AA level.		01/10/2026
+INT_NOTIF_007	Pass	TRSM receives notification when the application is pending with TRSM, and AA receives notification when it reaches AA.		01/10/2026
+INT_NOTIF_008	Pass	AA notification is triggered only after successful TRSM approval and application movement to AA bucket.		01/10/2026
+INT_NOTIF_009	Pass	Application remains rejected and no further approval notification is generated. HOB receives AA rejection notification.		01/10/2026
+INT_NOTIF_010	Pass	Notification contains the correct applicant/lead reference and current approval/rejection status.		01/10/2026
+INT_NOTIF_011	Pass	In either case, application is rejected and HOB receives notification specifying the exact rejection level.		01/10/2026
+TC_ONB_001	Pass	Request should be raised successfully and should appear in Sr MBD approval bucket		01/10/2026
+TC_ONB_002	Pass	Request should be raised successfully and should appear in Sr MBD approval bucket		01/10/2026
+TC_ONB_003	Pass	Request should be raised successfully and should appear in Sr MBD approval bucket		01/10/2026
+TC_ONB_004	Pass	After Sr MBD approval, request should move to LOP approval bucket and then to Agency Admin approval bucket		01/10/2026
+TC_ONB_005	Pass	HOB, AS and LOP should be able to upload document and raise activation request		01/10/2026
+TC_ONB_006	Pass	Agency Admin should activate the code and sales code should become active		01/10/2026
+TC_ONB_007	Pass	Request should be raised successfully and should appear in LOP approval bucket		01/10/2026
+TC_ONB_008	Pass	Request should be raised successfully and should appear in LOP approval bucket		01/10/2026
+TC_ONB_009	Pass	Request should be raised successfully and should appear in LOP approval bucket		01/10/2026
+TC_ONB_010	Pass	After LOP approval, request should move to Agency Admin approval bucket		01/10/2026
+TC_ONB_011	Pass	HOB, AS and LOP should be able to upload document and raise activation request		01/10/2026
+TC_ONB_012	Pass	Agency Admin should activate the code and sales code should become active		01/10/2026
+TC_ONB_013	Pass	Request should move to LOP approval bucket successfully		01/10/2026
+TC_ONB_014	Pass	Medical Report upload option should be displayed on the document upload page in the LOP approval tray		01/10/2026
+TC_ONB_015	Pass	After LOP approval, request should move to Agency Admin approval bucket		01/10/2026
+TC_ONB_016	Pass	Agency Admin should activate the code and sales code should become active		01/10/2026
+TC_ONB_017	Pass	Request should be rejected and should not proceed to LOP or Agency Admin		01/10/2026
+TC_ONB_018	Pass	Request should be rejected and no further processing should happen		01/10/2026
+TC_ONB_019	Pass	Request should be rejected and sales code should not be activated		01/10/2026
+TC_ONB_020	Pass	Rejected case should not allow activation request and status should be displayed as "Rejected"		01/10/2026
+TC_ONB_021	Pass	When we choose the designaition Agency Supervisor (In the personal details page) In the mandatry document page "AS Registration" field should be available to upload the document.		01/10/2026
+TC_ONB_022	Pass	When we choose the designaition Agency Head(In the personal details page) In the mandatry document page "AS Registration" field and "CRIB Report" should be available to upload the document.		01/10/2026
+OB_REJ_001	Pass	Request returns to HOB, and HOB can correct the required information and raise the request again.		01/10/2026
+OB_REJ_002	Pass	Request returns to AS, and AS can resubmit the corrected request.		01/10/2026
+OB_REJ_003	Pass	Request returns to LOP, and LOP can resubmit the corrected request.		01/10/2026
+OB_REJ_004	Pass	HOB/AS/LOP can identify the rejection reason and take corrective action before resubmission.		01/10/2026
+OB_REJ_005	Pass	Request remains in the rejected/returned state and is routed back to the original requester instead of LOP.		01/10/2026
+OB_REJ_006	Pass	Every rejection returns the request to the original requester, who can correct and resubmit it again.		01/10/2026
+OB_REJ_007	Pass	Request returns to the original HOB/AS/LOP requester for correction and resubmission.		01/10/2026
+OB_REJ_008	Pass	Original requester can correct the request and raise it again; it follows the applicable approval flow again.		01/10/2026
+OB_REJ_009	Pass	Request is returned to the original requester and does not proceed to AA until LOP approves it.		01/10/2026
+OB_REJ_010	Pass	Each LOP rejection returns the request to the original requester, and each corrected resubmission can proceed for LOP approval again.		01/10/2026
+OB_REJ_011	Pass	Request returns to the original HOB/AS/LOP requester for correction and resubmission.		01/10/2026
+OB_REJ_012	Pass	Agent Agreement Upload stage is not enabled until AA approves the onboarding request.		01/10/2026
+OB_REJ_013	Pass	HOB/AS/LOP can correct the request and raise it again for the applicable approval flow.		01/10/2026
+OB_REJ_014	Pass	Each rejection returns the request to the original requester and each resubmission follows the required approval sequence again.		01/10/2026
+OB_REJ_015	Pass	Agent Agreement Upload stage becomes available only after successful AA approval.		01/10/2026
+OB_REJ_016	Pass	System allows activation request only after successful agreement upload.		01/10/2026
+OB_REJ_017	Pass	Request does not return to SMBD/LOP/AA onboarding approval; it returns directly to Agent Agreement Upload.		01/10/2026
+OB_REJ_018	Pass	HOB can upload the corrected agreement and raise the Agent Code Activation request again.		01/10/2026
+OB_REJ_019	Pass	AS can upload the corrected agreement and resubmit the activation request.		01/10/2026
+OB_REJ_020	Pass	LOP can upload the corrected agreement and resubmit the activation request.		01/10/2026
+OB_REJ_021	Pass	Each rejection returns to Agreement Upload, allowing the requester to correct and resubmit until AA approval.		01/10/2026
+OB_REJ_022	Pass	After corrected agreement submission and AA approval, Agent Code is successfully activated.		01/10/2026
+OB_REJ_023	Pass	Agent Code remains inactive and the agent cannot log in until AA provides final approval.		01/10/2026
+OB_REJ_024	Pass	Request goes directly to LOP; SMBD approval is not introduced into the workflow.		01/10/2026
+OB_REJ_025	Pass	Original requester receives the rejected request and can correct and resubmit it.		01/10/2026
+OB_REJ_026	Pass	Request returns to the original requester and does not proceed to Agent Agreement Upload.		01/10/2026
+OB_REJ_027	Pass	Every corrected resubmission goes to LOP first and then AA after LOP approval.		01/10/2026
+OB_REJ_028	Pass	Whether HOB, AS, or LOP originally raised the request, every rejection is returned to that same requester for resubmission.		01/10/2026
+OB_REJ_029	Pass	Each rejection contains the applicable approver's remarks, allowing the requester to understand the reason for rejection.		01/10/2026
+AO_NOTIF_001	Pass	Notification is triggered to the next-level approver when the application moves to the next approval stage		01/10/2026
+AO_NOTIF_002	Pass	LOP receives an approval action notification.		01/10/2026
+AO_NOTIF_003	Pass	AA receives an approval action notification.		01/10/2026
+AO_NOTIF_004	Pass	Original requester receives the rejection notification containing the applicant name.		01/10/2026
+AO_NOTIF_005	Pass	Original requester receives the rejection notification and the application is available to the requester for correction/re-submission		01/10/2026
+AO_NOTIF_006	Pass	Original requester receives the rejection notification and the application is returned to the requester for the applicable next action		01/10/2026
+AO_NOTIF_007	Pass	Requester receives notification when application gets rejeceted, while the role responsible for the current approval receives the action notification; unrelated users do not receive the notification		01/10/2026
+AO_NOTIF_008	Pass	Each workflow transition generates the expected notification only once.		01/10/2026
+RLC_CM_001	Pass	Campaign is created successfully and a "Campaign Created Successfully" notification is displayed.		01/10/2026
+RLC_CM_002	Pass	Campaign is created successfully and the creation success notification is displayed.		01/10/2026
+RLC_CM_003	Pass	Create Campaign functionality is unavailable or access is denied.		01/10/2026
+RLC_CM_004	Pass	Submission is prevented and validation/mandatory-field notification is displayed.		01/10/2026
+RLC_CM_005	Pass	Campaign is created successfully without validation errors for optional fields.		01/10/2026
+RLC_CM_006	Pass	System prevents creation and displays appropriate date validation.		01/10/2026
+RLC_CM_007	Pass	Updated campaign information is saved and displayed.		01/10/2026
+RLC_CM_008	Pass	Updated end date is retained and displayed correctly.		01/10/2026
+RLC_CM_009	Pass	Updated budget is retained and displayed correctly.		01/10/2026
+RLC_CM_010	Pass	Campaign status changes to active.		01/10/2026
+RLC_CM_011	Pass	Campaign status changes to inactive/deactivated.		01/10/2026
+RLC_CM_012	Pass	Expired campaign remains visible according to the implemented campaign visibility behavior and its expired/status state is identifiable.		01/10/2026
+RLC_BU_001	Pass	Bulk lead upload functionality is available.		01/10/2026
+RLC_BU_002	Pass	Individual lead entry is unavailable where the requirement restricts entry to bulk upload.		01/10/2026
+RLC_BU_003	Pass	Sample template is made available for download.		01/10/2026
+RLC_BU_004	Pass	Files containing all required columns are accepted for structural validation; files missing a required column are rejected with an appropriate validation message.		01/10/2026
+RLC_BU_005	Pass	File is accepted without validation errors caused by blank optional fields.		01/10/2026
+RLC_BU_006	Pass	File is accepted and processed successfully.		01/10/2026
+RLC_BU_007	Pass	File is accepted and processed successfully.		01/10/2026
+RLC_BU_008	Pass	CSV is accepted if supported by the final implemented requirement; otherwise the system rejects it with a supported-format message.		01/10/2026
+RLC_BU_009	Pass	Upload is rejected and an appropriate unsupported-format error is displayed.		01/10/2026
+RLC_BU_010	Pass	Invalid records are identified/rejected and appropriate validation information is displayed.		01/10/2026
+RLC_BU_011	Pass	File is processed successfully and the uploaded count reflects successfully uploaded records.		01/10/2026
+RLC_BU_012	Pass	System provides an appropriate success or error notification corresponding to the upload outcome.		01/10/2026
+RLC_BU_013	Pass	Summary displays the file name, upload date, and successfully uploaded count.		01/10/2026
+RLC_BU_014	Pass	Successfully uploaded leads are displayed.		01/10/2026
+RLC_BU_015	Pass	Invalid records are identified as errors and are not counted as successfully uploaded records.		01/10/2026
+RLC_BU_016	Pass	Upload is rejected and an appropriate empty-file/error message is displayed.		01/10/2026
+RLC_BU_017	Pass	Upload fails and an appropriate error message is displayed.		01/10/2026
+RLC_BU_018	Pass	Duplicate NIC records are handled according to the system validation behavior and are not incorrectly treated as unique valid leads.		01/10/2026
+RLC_BU_019	Pass	File is rejected and an appropriate template/structure validation error is displayed.		01/10/2026
+RLC_CS_001	Pass	The Marketing-created campaign is visible to Agency Admin.		01/10/2026
+RLC_CS_002	Pass	The Agency Admin-created campaign is visible to Marketing Team.		01/10/2026
+RLC_CS_003	Pass	Each creator can access campaign functionality permitted to that role without user-specific restrictions.		01/10/2026
+RLC_CS_004	Pass	Equivalent-role users receive equivalent permitted campaign access.		01/10/2026
+RLC_CS_005	Pass	Both users receive the same role-based access.		01/10/2026
+RLC_CS_006	Pass	Campaign status changes correctly between active and inactive/deactivated states.		01/10/2026
+RLC_CS_007	Pass	Modification controls are unavailable or the action is denied.		01/10/2026
+RLC_CS_008	Pass	Campaigns are displayed in the required chronological order.		01/10/2026
+RLC_CS_009	Pass	Each campaign displays its applicable status.		01/10/2026
+RLC_CS_010	Pass	Overall lead summary and lead status/count information are displayed and correspond to the leads shown.		01/10/2026
+RLC_HA_001	Pass	HOB can access the permitted campaign list.		01/10/2026
+RLC_HA_002	Pass	Lead details are displayed.		01/10/2026
+RLC_HA_003	Pass	Lead changes are saved and displayed.		01/10/2026
+RLC_HA_004	Pass	Lead proceeds to the next permitted workflow state.		01/10/2026
+RLC_HA_005	Pass	Lead is created successfully for the permitted campaign.		01/10/2026
+RLC_HA_006	Pass	Lead is created successfully.		01/10/2026
+RLC_HA_007	Pass	Lead entry is unavailable or access is denied.		01/10/2026
+RLC_HA_008	Pass	AS-created lead is routed to HOB as required.		01/10/2026
+RLC_HA_009	Pass	Unauthorized access is denied and protected actions cannot be performed.		01/10/2026
+RLC_HA_010	Pass	Approval is accepted and candidate status/workflow is updated.		01/10/2026
+RLC_HA_011	Pass	Candidate status changes to Agreed for Interview.		01/10/2026
+RLC_HA_012	Invalid	Not executed: Marked Invalid by the tester: the application has no 'Reschedule' interview status (the lead offers only Agreed for the interview, Cannot be contacted, Not available for the interview).	Invalid. Marked Invalid by the tester: the application has no 'Reschedule' interview status (the lead offers only Agreed for the interview, Cannot be contacted, Not available for the interview).	01/10/2026
+RLC_HA_013	Pass	Candidate status changes to Reject Interview.		01/10/2026
+RLC_HA_014	Pass	Candidate status changes to Cannot Be Contacted.		01/10/2026
+RLC_HA_015	Pass	Interview is scheduled and the scheduling information is retained.		01/10/2026
+RLC_HA_016	Pass	Candidate follows the workflow applicable to candidates above 22.		01/10/2026
+RLC_HA_017	Pass	Required supporting-document validation prevents the applicable progression.		01/10/2026
+RLC_HA_018	Pass	Candidate can proceed when the applicable required supporting documentation is present.		01/10/2026
+RLC_HA_019	Pass	System applies the requirement's defined age-threshold workflow consistently to exactly 22 without treating the candidate as above 22.		01/10/2026
+RLC_AT_001	Pass	The lead appears in the Agency Admin approval workflow.		01/10/2026
+RLC_AT_002	Pass	Approval succeeds and approval status is updated.		01/10/2026
+RLC_AT_003	Pass	Rejection succeeds and rejection status is updated.		01/10/2026
+RLC_AT_004	Pass	Lead transitions to the approved workflow state.		01/10/2026
+RLC_AT_005	Pass	Lead transitions to the rejected workflow state.		01/10/2026
+RLC_AT_006	Pass	Approval/rejection controls are unavailable or the action is denied.		01/10/2026
+RLC_AT_007	Pass	Approved lead moves to onboarding as required.		01/10/2026
+RLC_AT_008	Pass	Recruitment/onboarding approval/rejection notifications are generated as implemented; Email/SMS dispatch is not treated as a required successful outcome and notifications do not contain remarks.		01/10/2026
+RLC_DM_001	Pass	Supported image is uploaded successfully and associated with the relevant lead/candidate.		01/10/2026
+RLC_DM_002	Pass	Document can be viewed successfully.		01/10/2026
+RLC_DM_003	Pass	Previously uploaded document remains visible.		01/10/2026
+RLC_DM_004	Pass	Previously uploaded document records/history are displayed.		01/10/2026
+RLC_DM_005	Pass	Access to the document is denied.		01/10/2026
+RLC_DM_006	Pass	Documents can be viewed; document download is not expected as supported functionality.		01/10/2026
+RLC_LM_001	Pass	Lead is created successfully.		01/10/2026
+RLC_LM_002	Pass	Lead is not created and mandatory-field validation is displayed.		01/10/2026
+RLC_LM_003	Pass	System rejects the invalid NIC and displays appropriate validation.		01/10/2026
+RLC_LM_004	Pass	System rejects the invalid contact number and displays appropriate validation.		01/10/2026
+RLC_LM_005	Pass	Updated details are retained and displayed.		01/10/2026
+RLC_LM_006	Pass	New lead status is saved and displayed.		01/10/2026
+RLC_LM_007	Fail	Funnel on screen: {PROSPECT=1159, SUPERVISOR INTERVIEW=395, CODE ACTIVATED=357, HOB INTERVIEW=862, CODE ISSUED=419, SLII EXAM=428, CLEARANCE=0}. Database counts (Database.md queries): {PROSPECT=1009, HOB INTERVIEW=877, SUPERVISOR INTERVIEW=398, SLII EXAM=428, CODE ISSUED=419, CODE ACTIVATED=357, CLEARANCE=0}	The following asserts failed: Count of stage PROSPECT, Count of stage HOB INTERVIEW, Count of stage SUPERVISOR INTERVIEW.	01/10/2026
+RLC_LM_008	Pass	Lead moves to onboarding successfully.		01/10/2026
+RLC_LM_009	Pass	Transition is prevented and an appropriate validation/error is displayed.		01/10/2026
+RLC_LM_010	Pass	Duplicate lead/NIC is detected and the system prevents or handles the duplicate according to the implemented validation.		01/10/2026
+RLC_SLII_001	Pass	Agency Admin can access the section.		01/10/2026
+RLC_SLII_002	Fail	SLII Exam Management path /app/recruitment-support/slii-exam-management opened by HOB shows the uploader: true	HOB can access SLII Exam Management.	01/10/2026
+RLC_SLII_003	Pass	File uploads successfully.		01/10/2026
+RLC_SLII_004	Pass	File uploads successfully.		01/10/2026
+RLC_SLII_005	Pass	File uploads successfully.		01/10/2026
+RLC_SLII_006	Pass	Listing displays the file name, upload date, and upload time.		01/10/2026
+RLC_SLII_007	Pass	Uploaded file details are displayed.		01/10/2026
+RLC_SLII_008	Pass	Multiple uploads are retained and displayed in the upload history.		01/10/2026
+RLC_SLII_009	Pass	Multiple exam attempts are retained and distinguishable through the available upload records.		01/10/2026
+RLC_SLII_010	Pass	All valid uploads within the month are retained in history.		01/10/2026
+RLC_SLII_011	Pass	Both uploads are handled as separate upload records where permitted, without incorrectly overwriting upload history.		01/10/2026
+RLC_SLII_012	Pass	Records show the applicable upload timestamps and remain distinguishable.		01/10/2026
+RLC_SLII_013	Pass	Upload records are displayed in chronological order.		01/10/2026
+RLC_SLII_014	Pass	Upload is rejected with an appropriate supported-format error.		01/10/2026
+RLC_SLII_015	Pass	Upload is rejected with an appropriate template validation message.		01/10/2026
+RLC_SLII_016	Pass	File is rejected and an appropriate structure error is displayed.		01/10/2026
+RLC_SLII_017	Pass	Upload fails and an appropriate error message is displayed.		01/10/2026
+RLC_SLII_018	Pass	Upload is rejected with an appropriate empty-file error.		01/10/2026
+RLC_SLII_019	Pass	Upload is not performed and an appropriate no-file-selected message is displayed.		01/10/2026
+RLC_BL_001	Pass	Agency Admin can access the section.		01/10/2026
+RLC_BL_002	Fail	Blacklisting path /app/recruitment-support/blacklisting opened by HOB shows the uploader: true	HOB can access Blacklisting.	01/10/2026
+RLC_BL_003	Pass	Applicable blacklist upload instructions are displayed.		01/10/2026
+RLC_BL_004	Pass	Blacklist file uploads successfully.		01/10/2026
+RLC_BL_005	Pass	Blacklist file uploads successfully.		01/10/2026
+RLC_BL_006	Pass	Blacklist file uploads successfully.		01/10/2026
+RLC_BL_007	Pass	Uploaded blacklist is visible with file name and upload date.		01/10/2026
+RLC_BL_008	Pass	Multiple upload records are retained and visible.		01/10/2026
+RLC_BL_009	Pass	Blacklist upload history/audit records are displayed.		01/10/2026
+RLC_BL_010	Pass	Candidate is identified as blacklisted during recruitment.		01/10/2026
+RLC_BL_011	Pass	Candidate is identified as blacklisted during onboarding.		01/10/2026
+RLC_BL_012	Pass	Candidate is not identified as blacklisted based on the uploaded blacklist.		01/10/2026
+RLC_BL_013	Pass	Template is accepted for processing.		01/10/2026
+RLC_BL_014	Pass	Upload is rejected with an appropriate template error.		01/10/2026
+RLC_BL_015	Pass	Upload is rejected with an appropriate structure validation error.		01/10/2026
+RLC_BL_016	Pass	Upload is rejected with an appropriate empty-file error.		01/10/2026
+RLC_BL_017	Pass	Upload fails and an appropriate error message is displayed.		01/10/2026
+RLC_BL_018	Pass	Upload is prevented and an appropriate error message is displayed.		01/10/2026
+RLC_BL_019	Pass	Upload failure is clearly indicated and the failed file is not treated as a successful blacklist upload.		01/10/2026
+RLC_BL_020	Pass	Candidate validation uses the latest blacklist according to the requirement; prior blacklist data is not incorrectly used as the current validation set.		01/10/2026
+RLC_BL_021	Pass	Duplicate records are handled without incorrectly creating multiple distinct blacklist identities for the same candidate.		01/10/2026
+RLC_BL_022	Fail	Blacklisting path /app/recruitment-support/blacklisting opened by HOB shows the uploader: true	HOB can access Blacklisting.	01/10/2026
+RLC_GV_001	Pass	Marketing Team can perform only the campaign actions permitted by the requirements.		01/10/2026
+RLC_GV_002	Pass	HOB can perform permitted campaign/lead actions and restricted actions are denied.		01/10/2026
+RLC_GV_003	Pass	AS can perform permitted actions and branch/role restrictions are enforced.		01/10/2026
+RLC_GV_004	Pass	Agency Admin receives the role-based access specified for those functions.		01/10/2026
+RLC_GV_005	Fail	Supervisor direct access - Blacklisting: true, SLII Exam Management: true	Blacklisting is accessible to the Supervisor.	01/10/2026
+RLC_GV_006	Pass	Access is determined by role and is consistent for equivalent roles.		01/10/2026
+RLC_GV_007	Pass	Campaign Cost/Budget terminology is consistent with the implemented requirement across applicable screens.		01/10/2026
+RLC_GV_008	Pass	Missing data is handled clearly and does not display fabricated or misleading values.		01/10/2026
+RLC_GV_009	Pass	Invalid input is rejected and an appropriate validation/error message is displayed.		01/10/2026
+RLC_GV_010	Pass	Failure is clearly indicated with an appropriate error/validation message and is not reported as a successful upload.		01/10/2026
+RLC_GV_011	Invalid	Not executed: Marked 'Not in scope' by ASPL in the test scenario document; there is no functional behaviour to automate.	Invalid. Marked 'Not in scope' by ASPL in the test scenario document; there is no functional behaviour to automate.	01/10/2026
+RLC_GV_012	Invalid	Not executed: Marked 'Not in scope' by ASPL in the test scenario document; there is no functional behaviour to automate.	Invalid. Marked 'Not in scope' by ASPL in the test scenario document; there is no functional behaviour to automate.	01/10/2026
+RLC_GV_013	Pass	Implemented approval/rejection notifications can be validated; Email/SMS dispatch is excluded because it is not currently done.		01/10/2026
+RLC_GV_014	Pass	Notification is validated against the current implementation; remarks are not expected within the notification.		01/10/2026

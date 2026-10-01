@@ -1,0 +1,81 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Agent onboarding test cases only (Agent_Onboarding_flow.md). Run with:
+     mvn test -Dsurefire.suiteXmlFiles=testng-onboarding.xml -->
+<suite name="AMS Agent Onboarding UAT" parallel="classes" thread-count="4">
+    <listeners>
+        <listener class-name="com.ams.report.ExecutionListener"/>
+        <!-- Runs only the test cases given with -Dtestcases=TC_001,TC_005 (all when not given) -->
+        <listener class-name="com.ams.report.TestCaseSelector"/>
+    </listeners>
+    <test name="Agent onboarding test cases">
+        <classes>
+            <class name="com.ams.tests.AA_SLII_006"/>
+            <class name="com.ams.tests.AA_AGENT_008"/>
+            <class name="com.ams.tests.AA_AGENT_009"/>
+            <class name="com.ams.tests.AA_AGENT_010"/>
+            <class name="com.ams.tests.TC_REC_APP_013"/>
+            <class name="com.ams.tests.TC_REC_APP_014"/>
+            <class name="com.ams.tests.TC_REC_APP_015"/>
+            <class name="com.ams.tests.TC_ONB_001"/>
+            <class name="com.ams.tests.TC_ONB_002"/>
+            <class name="com.ams.tests.TC_ONB_003"/>
+            <class name="com.ams.tests.TC_ONB_004"/>
+            <class name="com.ams.tests.TC_ONB_005"/>
+            <class name="com.ams.tests.TC_ONB_006"/>
+            <class name="com.ams.tests.TC_ONB_007"/>
+            <class name="com.ams.tests.TC_ONB_008"/>
+            <class name="com.ams.tests.TC_ONB_009"/>
+            <class name="com.ams.tests.TC_ONB_010"/>
+            <class name="com.ams.tests.TC_ONB_011"/>
+            <class name="com.ams.tests.TC_ONB_012"/>
+            <class name="com.ams.tests.TC_ONB_013"/>
+            <class name="com.ams.tests.TC_ONB_014"/>
+            <class name="com.ams.tests.TC_ONB_015"/>
+            <class name="com.ams.tests.TC_ONB_016"/>
+            <class name="com.ams.tests.TC_ONB_017"/>
+            <class name="com.ams.tests.TC_ONB_018"/>
+            <class name="com.ams.tests.TC_ONB_019"/>
+            <class name="com.ams.tests.TC_ONB_020"/>
+            <class name="com.ams.tests.TC_ONB_021"/>
+            <class name="com.ams.tests.TC_ONB_022"/>
+            <class name="com.ams.tests.OB_REJ_001"/>
+            <class name="com.ams.tests.OB_REJ_002"/>
+            <class name="com.ams.tests.OB_REJ_003"/>
+            <class name="com.ams.tests.OB_REJ_004"/>
+            <class name="com.ams.tests.OB_REJ_005"/>
+            <class name="com.ams.tests.OB_REJ_006"/>
+            <class name="com.ams.tests.OB_REJ_007"/>
+            <class name="com.ams.tests.OB_REJ_008"/>
+            <class name="com.ams.tests.OB_REJ_009"/>
+            <class name="com.ams.tests.OB_REJ_010"/>
+            <class name="com.ams.tests.OB_REJ_011"/>
+            <class name="com.ams.tests.OB_REJ_012"/>
+            <class name="com.ams.tests.OB_REJ_013"/>
+            <class name="com.ams.tests.OB_REJ_014"/>
+            <class name="com.ams.tests.OB_REJ_015"/>
+            <class name="com.ams.tests.OB_REJ_016"/>
+            <class name="com.ams.tests.OB_REJ_017"/>
+            <class name="com.ams.tests.OB_REJ_018"/>
+            <class name="com.ams.tests.OB_REJ_019"/>
+            <class name="com.ams.tests.OB_REJ_020"/>
+            <class name="com.ams.tests.OB_REJ_021"/>
+            <class name="com.ams.tests.OB_REJ_022"/>
+            <class name="com.ams.tests.OB_REJ_023"/>
+            <class name="com.ams.tests.OB_REJ_024"/>
+            <class name="com.ams.tests.OB_REJ_025"/>
+            <class name="com.ams.tests.OB_REJ_026"/>
+            <class name="com.ams.tests.OB_REJ_027"/>
+            <class name="com.ams.tests.OB_REJ_028"/>
+            <class name="com.ams.tests.OB_REJ_029"/>
+            <class name="com.ams.tests.AO_NOTIF_001"/>
+            <class name="com.ams.tests.AO_NOTIF_002"/>
+            <class name="com.ams.tests.AO_NOTIF_003"/>
+            <class name="com.ams.tests.AO_NOTIF_004"/>
+            <class name="com.ams.tests.AO_NOTIF_005"/>
+            <class name="com.ams.tests.AO_NOTIF_006"/>
+            <class name="com.ams.tests.AO_NOTIF_007"/>
+            <class name="com.ams.tests.AO_NOTIF_008"/>
+            <class name="com.ams.tests.RLC_BL_011"/>
+        </classes>
+    </test>
+</suite>

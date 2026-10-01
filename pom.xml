@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Lets "mvn clean test" run from this folder: it simply builds the automation project in ./automation.
+  Test options still work here, e.g.  mvn test -Dheadless=true
+                                      mvn test -Dsurefire.suiteXmlFiles=testng-onboarding.xml
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ams</groupId>
+    <artifactId>ams-automation-module</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>automation</module>
+    </modules>
+</project>

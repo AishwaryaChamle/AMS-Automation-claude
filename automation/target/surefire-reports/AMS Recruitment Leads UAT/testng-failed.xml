@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AMS Recruitment Leads UAT]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="com.ams.report.ExecutionListener"/>
+    <listener class-name="com.ams.report.TestCaseSelector"/>
+  </listeners>
+  <test thread-count="5" name="All test cases(failed)" verbose="0">
+    <classes>
+      <class name="com.ams.tests.RLC_GV_012">
+        <methods>
+          <include name="annualNicCleansingOutOfScope"/>
+        </methods>
+      </class> <!-- com.ams.tests.RLC_GV_012 -->
+      <class name="com.ams.tests.RLC_GV_011">
+        <methods>
+          <include name="multiLanguageDocumentsOutOfScope"/>
+        </methods>
+      </class> <!-- com.ams.tests.RLC_GV_011 -->
+    </classes>
+  </test> <!-- All test cases(failed) -->
+</suite> <!-- Failed suite [AMS Recruitment Leads UAT] -->
